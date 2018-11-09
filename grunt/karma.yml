@@ -1,0 +1,20 @@
+options:
+  configFile: "test/karma.conf.js"
+  browsers:
+    - Firefox
+  files:
+    - test/js/*.specs.js
+  # Default files to exclude
+  exclude:
+    - test/js/excludeMe.specs.js
+    - test/js/excludeMe2.specs.js
+
+# By default we don't exclude all the tests,
+#  so this one should fail
+excludeTooLittle: {}
+
+# Now we should've excluded all bad specs
+# However this will fail
+excludeEnough:
+  exclude:
+    - test/js/excludeMe3.specs.js
